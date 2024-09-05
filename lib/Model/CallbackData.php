@@ -1,6 +1,6 @@
 <?php
 /**
- * OutResponseOfBalance
+ * CallbackData
  *
  * PHP version 7.4
  *
@@ -33,7 +33,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * OutResponseOfBalance Class Doc Comment
+ * CallbackData Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -41,7 +41,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializable
+class CallbackData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'OutResponseOfBalance';
+    protected static $openAPIModelName = 'CallbackData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,9 +58,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'data' => '\OpenAPI\Client\Model\Balance',
-        'msg' => 'string'
+        'channel' => 'string',
+        'error' => 'string',
+        'mobile' => 'string',
+        'param' => 'string',
+        'status' => 'string'
     ];
 
     /**
@@ -71,9 +73,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => 'int32',
-        'data' => null,
-        'msg' => null
+        'channel' => null,
+        'error' => null,
+        'mobile' => null,
+        'param' => null,
+        'status' => null
     ];
 
     /**
@@ -82,9 +86,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'data' => false,
-        'msg' => false
+        'channel' => false,
+        'error' => false,
+        'mobile' => false,
+        'param' => false,
+        'status' => false
     ];
 
     /**
@@ -173,9 +179,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'data' => 'data',
-        'msg' => 'msg'
+        'channel' => 'channel',
+        'error' => 'error',
+        'mobile' => 'mobile',
+        'param' => 'param',
+        'status' => 'status'
     ];
 
     /**
@@ -184,9 +192,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'data' => 'setData',
-        'msg' => 'setMsg'
+        'channel' => 'setChannel',
+        'error' => 'setError',
+        'mobile' => 'setMobile',
+        'param' => 'setParam',
+        'status' => 'setStatus'
     ];
 
     /**
@@ -195,9 +205,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'data' => 'getData',
-        'msg' => 'getMsg'
+        'channel' => 'getChannel',
+        'error' => 'getError',
+        'mobile' => 'getMobile',
+        'param' => 'getParam',
+        'status' => 'getStatus'
     ];
 
     /**
@@ -241,6 +253,21 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
         return self::$openAPIModelName;
     }
 
+    public const STATUS_FAIL = 'fail';
+    public const STATUS_SUCCESS = 'success';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::STATUS_FAIL,
+            self::STATUS_SUCCESS,
+        ];
+    }
 
     /**
      * Associative array for storing property values
@@ -257,9 +284,11 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('data', $data ?? [], null);
-        $this->setIfExists('msg', $data ?? [], null);
+        $this->setIfExists('channel', $data ?? [], null);
+        $this->setIfExists('error', $data ?? [], null);
+        $this->setIfExists('mobile', $data ?? [], null);
+        $this->setIfExists('param', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
     }
 
     /**
@@ -289,9 +318,27 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['channel'] === null) {
+            $invalidProperties[] = "'channel' can't be null";
         }
+        if ($this->container['mobile'] === null) {
+            $invalidProperties[] = "'mobile' can't be null";
+        }
+        if ($this->container['param'] === null) {
+            $invalidProperties[] = "'param' can't be null";
+        }
+        if ($this->container['status'] === null) {
+            $invalidProperties[] = "'status' can't be null";
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'status', must be one of '%s'",
+                $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -308,82 +355,146 @@ class OutResponseOfBalance implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets code
+     * Gets channel
      *
-     * @return int
+     * @return string
      */
-    public function getCode()
+    public function getChannel()
     {
-        return $this->container['code'];
+        return $this->container['channel'];
     }
 
     /**
-     * Sets code
+     * Sets channel
      *
-     * @param int $code 响应代码
+     * @param string $channel channel
      *
      * @return self
      */
-    public function setCode($code)
+    public function setChannel($channel)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($channel)) {
+            throw new \InvalidArgumentException('non-nullable channel cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['channel'] = $channel;
 
         return $this;
     }
 
     /**
-     * Gets data
-     *
-     * @return \OpenAPI\Client\Model\Balance|null
-     */
-    public function getData()
-    {
-        return $this->container['data'];
-    }
-
-    /**
-     * Sets data
-     *
-     * @param \OpenAPI\Client\Model\Balance|null $data data
-     *
-     * @return self
-     */
-    public function setData($data)
-    {
-        if (is_null($data)) {
-            throw new \InvalidArgumentException('non-nullable data cannot be null');
-        }
-        $this->container['data'] = $data;
-
-        return $this;
-    }
-
-    /**
-     * Gets msg
+     * Gets error
      *
      * @return string|null
      */
-    public function getMsg()
+    public function getError()
     {
-        return $this->container['msg'];
+        return $this->container['error'];
     }
 
     /**
-     * Sets msg
+     * Sets error
      *
-     * @param string|null $msg 错误信息:成功时为空或为success
+     * @param string|null $error 当回调状态显示失败时显示
      *
      * @return self
      */
-    public function setMsg($msg)
+    public function setError($error)
     {
-        if (is_null($msg)) {
-            throw new \InvalidArgumentException('non-nullable msg cannot be null');
+        if (is_null($error)) {
+            throw new \InvalidArgumentException('non-nullable error cannot be null');
         }
-        $this->container['msg'] = $msg;
+        $this->container['error'] = $error;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile
+     *
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->container['mobile'];
+    }
+
+    /**
+     * Sets mobile
+     *
+     * @param string $mobile mobile
+     *
+     * @return self
+     */
+    public function setMobile($mobile)
+    {
+        if (is_null($mobile)) {
+            throw new \InvalidArgumentException('non-nullable mobile cannot be null');
+        }
+        $this->container['mobile'] = $mobile;
+
+        return $this;
+    }
+
+    /**
+     * Gets param
+     *
+     * @return string
+     */
+    public function getParam()
+    {
+        return $this->container['param'];
+    }
+
+    /**
+     * Sets param
+     *
+     * @param string $param param
+     *
+     * @return self
+     */
+    public function setParam($param)
+    {
+        if (is_null($param)) {
+            throw new \InvalidArgumentException('non-nullable param cannot be null');
+        }
+        $this->container['param'] = $param;
+
+        return $this;
+    }
+
+    /**
+     * Gets status
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->container['status'];
+    }
+
+    /**
+     * Sets status
+     *
+     * @param string $status status
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
+        }
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($status, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'status', must be one of '%s'",
+                    $status,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
