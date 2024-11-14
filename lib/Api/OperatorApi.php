@@ -364,7 +364,7 @@ class OperatorApi
         }
 
 
-        $resourcePath = '/sw/api/v1/code/demoback';
+        $resourcePath = '/op/api/v1/code/demoback';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -674,7 +674,7 @@ class OperatorApi
         }
 
 
-        $resourcePath = '/sw/api/v1/code/request';
+        $resourcePath = '/op/api/v1/code/request';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -984,7 +984,7 @@ class OperatorApi
         }
 
 
-        $resourcePath = '/sw/api/v1/code/verify';
+        $resourcePath = '/op/api/v1/code/verify';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
