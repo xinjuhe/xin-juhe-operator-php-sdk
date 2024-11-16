@@ -1,10 +1,10 @@
 # OpenAPI\Client\BalanceApi
 
-All URIs are relative to https://api.juhe.xin, except if the operation defines another base path.
+All URIs are relative to https://api.juhe.xin.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**getBalance()**](BalanceApi.md#getBalance) | **POST** /user/api/v1/balance | 获取用户余额 |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getBalance()**](BalanceApi.md#getBalance) | **POST** /user/api/v1/balance | 获取用户余额
 
 
 ## `getBalance()`

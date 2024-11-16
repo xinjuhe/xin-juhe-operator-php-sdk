@@ -1,12 +1,12 @@
 # OpenAPI\Client\OauthApi
 
-All URIs are relative to https://api.juhe.xin, except if the operation defines another base path.
+All URIs are relative to https://api.juhe.xin.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**getToken()**](OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token |
-| [**getUserInfo()**](OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息 |
-| [**getUserInfo1()**](OauthApi.md#getUserInfo1) | **POST** /oauth2/userInfo | 获取用户信息 |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**getToken()**](OauthApi.md#getToken) | **POST** /oauth2/token | 获取Token
+[**getUserInfo()**](OauthApi.md#getUserInfo) | **GET** /oauth2/userInfo | 获取用户信息
+[**getUserInfo1()**](OauthApi.md#getUserInfo1) | **POST** /oauth2/userInfo | 获取用户信息
 
 
 ## `getToken()`
@@ -45,10 +45,10 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **client_id** | **string**| client_id | |
-| **client_secret** | **string**| client_secret | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **client_id** | **string**| client_id |
+ **client_secret** | **string**| client_secret |
 
 ### Return type
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **channel** | **string** |  |
 **error** | **string** | 当回调状态显示失败时显示 | [optional]
 **mobile** | **string** |  |
+**order_id** | **string** |  |
 **param** | **string** |  |
 **status** | **string** |  |
 

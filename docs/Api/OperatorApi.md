@@ -1,12 +1,12 @@
 # OpenAPI\Client\OperatorApi
 
-All URIs are relative to https://api.juhe.xin, except if the operation defines another base path.
+All URIs are relative to https://api.juhe.xin.
 
-| Method | HTTP request | Description |
-| ------------- | ------------- | ------------- |
-| [**demoback()**](OperatorApi.md#demoback) | **POST** /op/api/v1/code/demoback | 回到函数示例 |
-| [**request()**](OperatorApi.md#request) | **POST** /op/api/v1/code/request | 请求下发验证码接口 |
-| [**verify()**](OperatorApi.md#verify) | **POST** /op/api/v1/code/verify | 请求校验验证码接口 |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**demoback()**](OperatorApi.md#demoback) | **POST** /op/api/v1/code/demoback | 回到函数示例
+[**request()**](OperatorApi.md#request) | **POST** /op/api/v1/code/request | 请求下发验证码接口
+[**verify()**](OperatorApi.md#verify) | **POST** /op/api/v1/code/verify | 请求校验验证码接口
 
 
 ## `demoback()`
@@ -48,9 +48,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **data** | [**\OpenAPI\Client\Model\CallbackData**](../Model/CallbackData.md)| data | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**\OpenAPI\Client\Model\CallbackData**](../Model/CallbackData.md)| data |
 
 ### Return type
 
@@ -108,9 +108,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **request** | [**\OpenAPI\Client\Model\CodeRequest**](../Model/CodeRequest.md)| request | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **request** | [**\OpenAPI\Client\Model\CodeRequest**](../Model/CodeRequest.md)| request |
 
 ### Return type
 
@@ -168,9 +168,9 @@ try {
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **verify** | [**\OpenAPI\Client\Model\CodeVerify**](../Model/CodeVerify.md)| verify | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verify** | [**\OpenAPI\Client\Model\CodeVerify**](../Model/CodeVerify.md)| verify |
 
 ### Return type
 
